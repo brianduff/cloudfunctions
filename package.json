@@ -4,10 +4,12 @@
   "description": "",
   "main": "ts-built/index.js",
   "scripts": {
+    "gcp-build": "npm run build",
     "build": "tsc",
     "watch": "tsc --watch",
     "start": "npm run build && npx @google-cloud/functions-framework --target=hello",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gcloud functions deploy my-first-function --entry-point hello --allow-unauthenticated --trigger-http --runtime nodejs16"
   },
   "author": "",
   "license": "ISC",
